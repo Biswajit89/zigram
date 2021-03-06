@@ -1,0 +1,22 @@
+<div fxLayout="row" fxLayoutGap="20px" [formGroup]="form" *ngIf="form">
+    <mat-form-field appearance="fill">
+        <mat-label>Search the name here</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Select Category</mat-label>
+        <mat-select formControlName="category">
+          <mat-option  *ngFor="let item of categories" [value]="item?.strCategory">
+            {{item?.strCategory}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label> Select Ingradients</mat-label>
+        <mat-select formControlName="ingredients">
+          <mat-option value="vodka" *ngFor="let item of ingredients">
+            {{item?.strIngredient1}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+</div>
